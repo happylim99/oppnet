@@ -6,13 +6,16 @@ import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.channels.BroadcastChannel
 import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.channels.consumeEach
 import kotlinx.coroutines.flow.*
 
 @FlowPreview
-@ObsoleteCoroutinesApi
+//@ObsoleteCoroutinesApi
+@ExperimentalCoroutinesApi
 abstract class DataChannelManager<ViewState> {
 
     private val dataChannel = BroadcastChannel<DataState<ViewState>>(Channel.BUFFERED)
+//    private val dataChannel = MutableSharedFlow<DataState<ViewState>>()
     private var channelScope: CoroutineScope? = null
     private val stateEventManager: StateEventManager = StateEventManager()
 
