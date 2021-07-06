@@ -14,7 +14,7 @@ class SearchNote(
     private val noteCacheDataSource: NoteCacheDataSource
 ){
 
-    fun searchNotes(
+    fun searchNote(
         query: String,
         filterAndOrder: String,
         page: Int,
@@ -25,7 +25,7 @@ class SearchNote(
             updatedPage = 1
         }
         val cacheResult = safeCacheCall(Dispatchers.IO){
-            noteCacheDataSource.searchNotes(
+            noteCacheDataSource.searchNote(
                 query = query,
                 filterAndOrder = filterAndOrder,
                 page = updatedPage

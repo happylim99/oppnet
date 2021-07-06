@@ -22,7 +22,7 @@ sealed class NoteListStateEvent: StateEvent {
     }
 
     // for testing
-    class InsertMultipleNotesEvent(
+    class InsertMultipleNoteEvent(
         val numNotes: Int
     ): NoteListStateEvent() {
 
@@ -52,7 +52,7 @@ sealed class NoteListStateEvent: StateEvent {
         override fun shouldDisplayProgressBar() = true
     }
 
-    class DeleteMultipleNotesEvent(
+    class DeleteMultipleNoteEvent(
         val notes: List<Note>
     ): NoteListStateEvent(){
 
@@ -82,7 +82,7 @@ sealed class NoteListStateEvent: StateEvent {
         override fun shouldDisplayProgressBar() = false
     }
 
-    class SearchNotesEvent(
+    class SearchNoteEvent(
         val clearLayoutManagerState: Boolean = true
     ): NoteListStateEvent(){
 

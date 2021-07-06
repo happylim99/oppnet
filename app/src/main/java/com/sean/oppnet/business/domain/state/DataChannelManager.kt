@@ -1,5 +1,5 @@
 package com.sean.oppnet.business.domain.state
-
+/*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers.IO
@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.*
 @FlowPreview
 //@ObsoleteCoroutinesApi
 @ExperimentalCoroutinesApi
-abstract class DataChannelManager<ViewState> {
+abstract class DataChannelManagerrr<ViewState> {
 
     private val dataChannel = BroadcastChannel<DataState<ViewState>>(Channel.BUFFERED)
 //    private val dataChannel = MutableSharedFlow<DataState<ViewState>>()
@@ -151,3 +151,5 @@ abstract class DataChannelManager<ViewState> {
     }
 
 }
+
+ */

@@ -41,7 +41,7 @@ constructor(
         }?: - 1 // -1 for failure
     }
 
-    override suspend fun deleteNotes(notes: List<Note>): Int {
+    override suspend fun deleteNoteList(notes: List<Note>): Int {
         var failOrSuccess = 1
         for(note in notes){
             if(notesData.remove(note.id) == null){
@@ -75,7 +75,7 @@ constructor(
 
     // Not testing the order/filter. Just basic query
     // simulate SQLite "LIKE" query on title and body
-    override suspend fun searchNotes(
+    override suspend fun searchNote(
         query: String,
         filterAndOrder:
         String,
@@ -99,7 +99,7 @@ constructor(
         return results
     }
 
-    override suspend fun getAllNotes(): List<Note> {
+    override suspend fun getAllNote(): List<Note> {
         return ArrayList(notesData.values)
     }
 
@@ -107,11 +107,11 @@ constructor(
         return notesData.get(id)
     }
 
-    override suspend fun getNumNotes(): Int {
+    override suspend fun getNumNote(): Int {
         return notesData.size
     }
 
-    override suspend fun insertNotes(notes: List<Note>): LongArray {
+    override suspend fun insertNoteList(notes: List<Note>): LongArray {
         val results = LongArray(notes.size)
         for((index,note) in notes.withIndex()){
             results[index] = 1

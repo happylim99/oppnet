@@ -1,7 +1,7 @@
 package dependency
 
 object Version {
-    val gradle = "4.2.1"
+    val gradle = "4.2.2"
     val compilesdk = 30
     val minsdk = 21
     val targetsdk = 30
@@ -33,9 +33,11 @@ object Version {
     val retrofit2_version = "2.9.0"
     val markdown_processor = "0.1.3"
     val junit_jupiter_version = "5.7.2"
-    val junit_4_version = "4.13.2"
+    val junit_4_version = "4.+"
     val fragment_version = "1.3.5"
     val androidx_test_ext = "1.1.3"
     val crashlytics_gradle = "2.7.1"
     val mannodermaus_junit5 = "1.7.1.1"
+    val gson_google_version = "2.8.5"
+    val firebase_bom_ver = "28.2.0"
 }

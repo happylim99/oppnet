@@ -4,13 +4,16 @@ import dependency.Version
 buildscript {
     ext.kotlin_version = Version.kotlin
     repositories {
+//        maven {      url 'https://dl.google.com/dl/android/maven2'     }
         google()
         mavenCentral()
+        jcenter()
     }
     dependencies {
         classpath Build.build_tools
+//        classpath "com.android.tools.build:gradle:4.2.1"
         classpath Build.kotlin_gradle_plugin
-        classpath Build.google_services
+//        classpath Build.google_services
         classpath Build.crashlytics_gradle
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -21,7 +24,7 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-//        jcenter() // Warning: this repository is going to shut down soon
+        jcenter() // Warning: this repository is going to shut down soon
     }
 }
 

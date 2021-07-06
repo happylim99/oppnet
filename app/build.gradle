@@ -17,6 +17,7 @@ plugins {
 
 android {
     compileSdkVersion Version.compilesdk
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId Application.id
@@ -48,6 +49,10 @@ android {
         viewBinding true
     }
 
+    sourceSets {
+        test.resources.srcDirs += 'src/test/res'
+    }
+
     testOptions {
         unitTests.all {
             useJUnitPlatform()
@@ -56,29 +61,38 @@ android {
 }
 
 dependencies {
-
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
     // kotlin
     implementation Dependency.kotlin_standard_library
-    implementation Dependency.kotlin_reflect
+//    implementation Dependency.kotlin_reflect
     implementation Dependency.ktx
     // dagger
     implementation Dependency.dagger
     kapt Annotation.dagger_compiler
     // firebase
-    implementation Dependency.firebase_firestore
-    implementation Dependency.firebase_auth
-    implementation Dependency.firebase_analytics
-    implementation Dependency.firebase_crashlytics
+    implementation platform(Dependency.firebase_bom)
+    implementation(Dependency.firebase_firestore_bom) {
+        exclude group: 'com.google.code.gson'
+        exclude module: 'protolite-well-known-types'
+        exclude module: 'protobuf-javalite'
+        exclude module: 'protobuf-java'
+        exclude module: 'protobuf-java-util'
+    }
+    implementation Dependency.firebase_auth_bom
+    implementation Dependency.firebase_analytics_bom
+    implementation Dependency.firebase_crashlytics_bom
     // coroutine
     implementation Dependency.kotlin_coroutines
     implementation Dependency.kotlin_coroutines_android
-    implementation Dependency.kotlin_coroutines_play_services
+//    implementation Dependency.kotlin_coroutines_play_services
     // room
     implementation Dependency.room_ktx
     implementation Dependency.room_runtime
     // retrofit
     implementation Dependency.retrofit
-    implementation Dependency.retrofit_gson
+    implementation Dependency.gson_retrofit
+    // gson
+//    implementation Dependency.gson_google
 
     implementation DependencySupport.appcompat
     implementation DependencySupport.material_design

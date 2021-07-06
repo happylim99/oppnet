@@ -22,9 +22,17 @@ object Dependency {
     val firebase_auth = "com.google.firebase:firebase-auth:${Version.firebase_auth}"
     val firebase_analytics = "com.google.firebase:firebase-analytics-ktx:${Version.firebase_analytics}"
     val firebase_crashlytics = "com.google.firebase:firebase-crashlytics:${Version.firebase_crashlytics}"
+
+    val firebase_bom = "com.google.firebase:firebase-bom:${Version.firebase_bom_ver}"
+    val firebase_firestore_bom = "com.google.firebase:firebase-firestore-ktx"
+    val firebase_auth_bom = "com.google.firebase:firebase-auth"
+    val firebase_analytics_bom = "com.google.firebase:firebase-analytics-ktx"
+    val firebase_crashlytics_bom = "com.google.firebase:firebase-crashlytics"
+
     val lifecycle_runtime = "androidx.lifecycle:lifecycle-runtime:${Version.lifecycle_version}"
     val lifecycle_coroutines = "androidx.lifecycle:lifecycle-livedata-ktx:${Version.lifecycle_version}"
     val retrofit = "com.squareup.retrofit2:retrofit:${Version.retrofit2_version}"
-    val retrofit_gson = "com.squareup.retrofit2:converter-gson:${Version.retrofit2_version}"
+    val gson_retrofit = "com.squareup.retrofit2:converter-gson:${Version.retrofit2_version}"
     val markdown_processor = "com.yydcdut:markdown-processor:${Version.markdown_processor}"
+    val gson_google = "com.google.code.gson:gson:${Version.gson_google_version}"
 }
